@@ -22,7 +22,7 @@ double my_pow_fast(double indicator, int degree)
 		}
 	}
 
-	return degree < 0 ? finalNumber : 1 / finalNumber;
+	return degree < 0 ? 1/finalNumber : finalNumber;
 }
 
 int main()
