@@ -1,16 +1,28 @@
 ﻿#include <iostream>
 using namespace std;
 
-
-double my_pow(double indicator, unsigned int degree)    
+double my_pow_fast(double indicator, int degree)
 {
 	double finalNumber = 1;
-	for (int i = 0; i < degree; i++)
+
+	degree = degree < 0 ? -degree : degree;
+
+	while (degree)
 	{
-		finalNumber *= indicator;
+		if (degree % 2 == 0)
+		{
+			degree /= 2;
+			indicator *= indicator;
+		}
+
+		else
+		{
+			degree--;
+			finalNumber *= indicator;
+		}
 	}
 
-	return finalNumber;
+	return degree < 0 ? finalNumber : 1 / finalNumber;
 }
 
 int main()
@@ -19,7 +31,7 @@ int main()
 	double indicator;
 
 	cin >> indicator >> degree;
-	double number = my_pow(indicator, degree);
+	double number = my_pow_fast(indicator, degree);
 
 	cout << number;
 
