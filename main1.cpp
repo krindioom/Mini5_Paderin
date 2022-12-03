@@ -24,12 +24,7 @@ double my_pow_fast(double indicator, int degree)
 		}
 	}
 
-<<<<<<< HEAD
 	return degree < 0 ? 1 / finalNumber : finalNumber;
-=======
-	return degree < 0 ? finalNumber : 1 / finalNumber;
->>>>>>> feature_fast
-}
 
 int main()
 {
