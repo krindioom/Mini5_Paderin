@@ -2,15 +2,17 @@
 using namespace std;
 
 
-double my_pow(double indicator, unsigned int degree)    
+double my_pow(double indicator, int degree)    
 {
+	degree = degree < 0 ? -degree : degree;
+
 	double finalNumber = 1;
 	for (int i = 0; i < degree; i++)
 	{
 		finalNumber *= indicator;
 	}
 
-	return finalNumber;
+	return degree < 0 ? 1 / finalNumber : finalNumber;
 }
 
 int main()
